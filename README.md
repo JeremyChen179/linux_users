@@ -91,7 +91,22 @@ chmod +x test_user_scripts_docker.sh
 ./test_user_scripts_docker.sh
 ```
 
-The script will print `[PASS] All tests passed inside Docker.` on success.
+On success, the script prints output similar to:
+
+```text
+Using Docker image: ubuntu:24.04
+[*] Updating package index and installing dependencies...
+[*] Running initial tracking script...
+[OK] current_users created with initial hash: 0e27f14693fc9c21c265b55509119a51
+[*] Creating test user 'testuser'...
+[*] Verifying list_users.sh reports testuser...
+[OK] testuser appears in list_users.sh output
+[*] Running tracking script after user change...
+[OK] user_changes logged and current_users hash updated:
+     old: 0e27f14693fc9c21c265b55509119a51
+     new: 3706818fe7355c02f45926387b6d8446
+[PASS] All tests passed inside Docker.
+```
 
 ## 4. Cron Setup
 
